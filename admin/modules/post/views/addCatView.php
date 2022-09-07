@@ -5,7 +5,7 @@
         <div id="content" class="fl-right">
             <div class="section" id="title-page">
                 <div class="clearfix">
-                    <h3 id="index" class="fl-left">Thêm mới danh mục</h3>
+                    <!-- <h3 id="index" class="fl-left">Thêm mới danh mục</h3> -->
                 </div>
             </div>
             <div class="section" id="detail-page">
