@@ -24,12 +24,6 @@ function format_list_cat($data, $parent_id = 0, $level = 0)
 function update_cat($data,$id){
     return db_update('`tbl_post_cat`',$data,"`id` = $id");
 }
-function print_char($char,$times){
-    $result="";
-    for ($i=0; $i<$times;$i++)
-         $result.=$char;
-    return $result;
-}
 function delete_cat($id){
     return db_delete('`tbl_post_cat`',"`id` = $id");
 }

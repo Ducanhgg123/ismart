@@ -2,6 +2,7 @@
 function construct()
 {
     load_model("category");
+    load('helper','string');
     load('lib', 'upload-file');
     load('lib', 'validation');
 };
@@ -126,6 +127,11 @@ function deleteAction()
     $id = $_GET['id'];
     $page = $_GET['page'];
     delete_cat($id);
+    $record_per_page = 2;
+    $total_record = db_num_rows("select `id` from `tbl_post_cat`");
+    $total_page = ceil($total_record / $record_per_page);
+    $page = min($page, $total_page);
+    
     redirect("?mod=post&controller=category&page=$page");
 }
 function deleteCatsAction()
@@ -135,7 +141,6 @@ function deleteCatsAction()
 
     foreach ($list_id as $id => $value)
         delete_cat((int)$id);
-
     $record_per_page = 2;
     $total_record = db_num_rows("select `id` from `tbl_post_cat`");
     $total_page = ceil($total_record / $record_per_page);

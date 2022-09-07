@@ -49,7 +49,7 @@
                     'thumb' => $upload_file
                 );
                 
-                if (add_page($data)>0 && move_uploaded_file($_FILES['file']['tmp_name'],$upload_file)){
+                if ((file_exists($upload_file) || move_uploaded_file($_FILES['file']['tmp_name'],$upload_file)) && add_page($data)>0 ){
                     $success="<b class='text-success'>Thêm trang thành công!</b>";
                 }
                 else 

@@ -10,7 +10,7 @@
             </div>
             <div class="section" id="detail-page">
                 <div class="section-detail">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                         <label for="title">Tiêu đề</label>
                         <input type="text" name="title" id="title" value="<?php show_value('title')?>">
                         <?php print_error('title')?>
@@ -30,11 +30,12 @@
                         <select name="category">
                             <option value="0">-- Chọn danh mục --</option>
                             <?php foreach ($list_cat as $cat) { ?>
-                                <option value="<?php echo $cat['id']?>"><?php echo $cat['title']?></option>
+                                <option value="<?php echo print_char('-',$cat['level']*2).' '.$cat['id']?>"><?php echo $cat['title']?></option>
                             <?php } ?>
                         </select>
                         <?php print_error('category')?>
                         <button type="submit" name="btn_add" id="btn-submit">Thêm mới</button>
+                        <?php show_value('success')?>
                     </form>
                 </div>
             </div>
