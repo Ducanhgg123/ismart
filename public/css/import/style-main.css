@@ -1,0 +1,33 @@
+#header,#footer{
+    background:aqua;
+    font-size: 20px;
+    text-align: center;
+}
+#content{
+    font-size: 50px;
+    text-align: center;
+    height:400px;
+}
+#wrapper{
+    margin:0px auto;
+    width:960px;
+}
+ul#main-menu{
+    margin:0;
+    display:flex;
+    justify-content: space-between;
+}
+ul#main-menu li {
+    padding:10px;
+    list-style: none;
+}
+ul#main-menu li a{
+    text-decoration: none;
+}
+#user-login{
+    text-align:center;
+    font-size:20px;
+}
+.error{
+    color:red;
+}
