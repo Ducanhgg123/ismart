@@ -38,13 +38,13 @@
             </a>
             <ul class="sub-menu">
                 <li class="nav-item">
-                    <a href="?page=add_product" title="" class="nav-link">Thêm mới</a>
+                    <a href="?mod=product&action=add" title="" class="nav-link">Thêm mới</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?page=list_product" title="" class="nav-link">Danh sách sản phẩm</a>
+                    <a href="?mod=product" title="" class="nav-link">Danh sách sản phẩm</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?page=list_cat" title="" class="nav-link">Danh mục sản phẩm</a>
+                    <a href="?mod=product&controller=category" title="" class="nav-link">Danh mục sản phẩm</a>
                 </li>
             </ul>
         </li>

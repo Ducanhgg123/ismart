@@ -6,7 +6,6 @@
             <div class="section" id="title-page">
                 <div class="clearfix">
                     <h3 id="index" class="fl-left">Thêm mới bài viết</h3>
-                    
                 </div>
             </div>
             <div class="section" id="detail-page">
@@ -14,29 +13,29 @@
                     <?php show_value('success')?>
                     <form method="POST" enctype="multipart/form-data">
                         <label for="title">Tiêu đề</label>
-                        <input type="text" name="title" id="title" value="<?php show_value('title')?>">
+                        <input type="text" name="title" id="title" value="<?php echo $post['title']?>">
                         <?php print_error('title')?>
                         <label for="title">Slug ( Friendly_url )</label>
-                        <input type="text" name="slug" id="slug" value="<?php show_value('slug')?>">
+                        <input type="text" name="slug" id="slug" value="<?php echo $post['slug']?>">
                         <?php print_error('slug')?>
                         <label for="desc">Mô tả</label>
-                        <textarea name="desc" id="desc" class="ckeditor"value="<?php show_value('desc')?>"><?php show_value('content')?></textarea>
+                        <textarea name="desc" id="desc" class="ckeditor"><?php echo $post['content']?></textarea>
                         <label>Hình ảnh</label>
                         <div id="uploadFile">
                             <input type="file" name="file" id="upload_file">
                             <!-- <input type="submit" name="btn-upload-thumb" value="Upload" id="btn-upload-thumb"> -->
-                            <img src="public/images/img-thumb.png" id="upload_thumb">
+                            <img src="<?php echo $post['thumb']?>" id="upload_thumb">
                         </div>
                         <?php print_error('file')?>
                         <label>Danh mục</label>
                         <select name="category">
                             <option value="0">-- Chọn danh mục --</option>
                             <?php foreach ($list_cat as $cat) { ?>
-                                <option value="<?php echo $cat['id']?>"><?php echo print_char('-',$cat['level']*2).' '.$cat['title']?></option>
+                                <option value="<?php echo $cat['id']?>" <?php if ($post['cat_id']==$cat['id']) echo 'selected'?>><?php echo print_char('-',$cat['level']*2).' '.$cat['title']?></option>
                             <?php } ?>
                         </select>
                         <?php print_error('category')?>
-                        <button type="submit" name="btn_add" id="btn-submit">Thêm mới</button>
+                        <button type="submit" name="btn_update" id="btn-submit">Thêm mới</button>
                         
                     </form>
                 </div>

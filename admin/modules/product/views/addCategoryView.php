@@ -10,7 +10,7 @@
             </div>
             <div class="section" id="detail-page">
                 <div class="section-detail">
-                    <form method="POST" action="?mod=post&controller=category&action=add">
+                    <form method="POST">
                         <label for="title">Tiêu đề</label>
                         <input type="text" name="title" id="title" value="<?php show_value('title') ?>">
                         <?php print_error('title') ?>
@@ -30,4 +30,4 @@
         </div>
     </div>
 </div>
-<?php get_sidebar() ?>
+<?php get_footer() ?>

@@ -114,7 +114,6 @@ get_header();
     function approve(id){
         var numApproved=$("#approved").text();
         var numNotApproved=$("#not-approved").text();
-        console.log(numApproved+" "+numNotApproved);
         $.ajax({
             url: '?mod=page&action=approve',
             method: 'POST',

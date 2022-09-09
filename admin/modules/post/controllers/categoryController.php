@@ -3,13 +3,14 @@ function construct()
 {
     load_model("category");
     load('helper','string');
+    load('helper','format');
     load('lib', 'upload-file');
     load('lib', 'validation');
 };
 function indexAction()
 {
     global $config;
-    $record_per_page = 2;
+    $record_per_page = 6;
     $total_record = db_num_rows("select `id` from `tbl_post_cat`");
     $total_page = ceil($total_record / $record_per_page);
     if (isset($_GET['page']))
@@ -64,7 +65,7 @@ function showCatAjaxAction()
     $page = (int) $_POST['page'];
 
     // Set page 
-    $record_per_page = 2;
+    $record_per_page = 6;
     $start = ($page - 1) * $record_per_page;
     $list_cat = array_slice(get_list_cat(), $start, $record_per_page);
     $start = ($page - 1) * $record_per_page;
@@ -127,7 +128,7 @@ function deleteAction()
     $id = $_GET['id'];
     $page = $_GET['page'];
     delete_cat($id);
-    $record_per_page = 2;
+    $record_per_page = 6;
     $total_record = db_num_rows("select `id` from `tbl_post_cat`");
     $total_page = ceil($total_record / $record_per_page);
     $page = min($page, $total_page);
@@ -141,7 +142,7 @@ function deleteCatsAction()
 
     foreach ($list_id as $id => $value)
         delete_cat((int)$id);
-    $record_per_page = 2;
+    $record_per_page = 6;
     $total_record = db_num_rows("select `id` from `tbl_post_cat`");
     $total_page = ceil($total_record / $record_per_page);
     $page = min($page, $total_page);

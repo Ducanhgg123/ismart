@@ -14,7 +14,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
  */
 
 $config['base_url'] = "http://localhost/UNITOP/Back_End/PHP%20Matser/project/ismart/";
-
+$config['record_per_page']=6;
 
 $config['default_module'] = 'home';
 $config['default_controller'] = 'index';
