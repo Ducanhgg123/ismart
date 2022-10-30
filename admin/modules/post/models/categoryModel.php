@@ -6,6 +6,8 @@ function add_cat($data)
 function get_list_cat()
 {
     $data = db_fetch_array('select * from `tbl_post_cat`');
+    // show_array($data);
+    // die();
     $data = format_list_cat($data);
     return $data;
 }

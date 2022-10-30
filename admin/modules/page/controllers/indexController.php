@@ -4,10 +4,11 @@
         load_model("page");
         load('lib','upload-file');
         load('helper','page');
+        load('lib','validation');
     };
     function indexAction(){
         global $config;
-        $record_per_page=5;
+        $record_per_page=$config['record_per_page'];
         $total_record=db_num_rows("select `id` from `tbl_page`");
         $total_page=ceil($total_record/$record_per_page);
         if (isset($_GET['page']))
@@ -24,8 +25,9 @@
         load_view('index',$data);
     }
     function addAction(){
-        global $error,$title,$success,$slug,$content;
+        global $error;
         $error=array();
+        $success="";
         if (isset($_POST['btn_add'])){
             $title=$_POST['title'];
             $slug=$_POST['slug'];
@@ -57,7 +59,8 @@
             }else
                 $success="<b class='text-red'>Thêm trang thất bại</b>";
         }
-        load_view('add');
+        $data['success']=$success;
+        load_view('add',$data);
     }
     function paginationAjaxAction(){
         global $config;

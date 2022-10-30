@@ -11,6 +11,7 @@
             <div class="section" id="detail-page">
                 <div class="section-detail">
                     <form method="POST" action="?mod=post&controller=category&action=add">
+                        <?php echo $success?>
                         <label for="title">Tiêu đề</label>
                         <input type="text" name="title" id="title" value="<?php show_value('title') ?>">
                         <?php print_error('title') ?>
@@ -23,7 +24,6 @@
                             <?php } ?>
                         </select>
                         <button type="submit" name="btn_add" id="btn-submit">Thêm mới</button>
-                        <?php show_value('success')?>
                     </form>
                 </div>
             </div>

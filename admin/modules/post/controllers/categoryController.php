@@ -30,7 +30,8 @@ function indexAction()
 }
 function addAction()
 {
-    global $error, $title, $success;
+    global $error, $title;
+    $success="";
     $error = array();
     if (isset($_POST['btn_add'])) {
         $title = $_POST['title'];
@@ -56,7 +57,8 @@ function addAction()
     }
 
     $data = array(
-        'list_cat' => get_list_cat()
+        'list_cat' => get_list_cat(),
+        'success' => $success
     );
     load_view('addCat', $data);
 }

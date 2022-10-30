@@ -18,6 +18,7 @@ $config['base_url'] = "http://localhost/UNITOP/Back_End/PHP%20Matser/project/ism
 $config['default_module'] = 'home';
 $config['default_controller'] = 'index';
 $config['default_action'] = 'index';
+$config['record_per_page'] = 20;
 
 
 

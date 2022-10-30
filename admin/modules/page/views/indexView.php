@@ -51,7 +51,7 @@ get_header();
                                                 <td><span class="tbody-text"><?php echo $count ?></h3></span>
                                                 <td class="clearfix">
                                                     <div class="tb-title fl-left">
-                                                        <a href="<?php echo $config['base_url'] . "mod=page&id=$id" ?>" title=""><?php echo $page['title'] ?></a>
+                                                        <a href="<?php echo $config['base_url'] . "?mod=page&id=$id" ?>" title=""><?php echo $page['title'] ?></a>
                                                     </div>
                                                     <ul class="list-operation fl-right">
                                                         <li><a href="?mod=page&action=update&id=<?php echo $id ?>" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>

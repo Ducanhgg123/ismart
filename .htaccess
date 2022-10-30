@@ -1,3 +1,13 @@
 RewriteEngine On
-RewriteRule ^([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=page&controller=index&action=index&id=$2&slug=$1
-RewriteRule ^([a-zA-Z0-9_-]+).html$ index.php?mod=home&controller=index&action=index&slug=$1
+RewriteRule "trang-chu.html" ""
+RewriteRule "danh-muc-san-pham/([0-9]+)" "?controller=product&cat_id=$1"
+RewriteRule "danh-muc-san-pham.html" "?controller=product"
+RewriteRule "danh-muc-san-pham/trang-([0-9]+)" "?controller=product&page=$1"
+RewriteRule "danh-muc-san-pham/([0-9-]+)/trang-([0-9]+)/([0-9-]+)/([0-9]+)/([0-9]+)" "?controller=product&cat_id=$1&page=$2&sort_type=$3&min=$4&max=$5"
+RewriteRule "blog.html" "?mod=blog"
+RewriteRule "blog/trang-([0-9]+)" "?mod=blog&page=$1"
+RewriteRule "blog/([0-9]+)/([a-zA-Z0-9-_]+).html" "?mod=blog&action=detail&id=$1&slug=$2"
+RewriteRule "thong-tin/([0-9]+)/([a-zA-Z0-9-_]+).html" "?mod=page&id=$1&slug=$2"
+RewriteRule "san-pham/([0-9]+)/([a-zA-Z0-9-_.()]+).html" "?controller=product&action=detail&id=$1&slug=$2"
+RewriteRule "gio-hang.html" "?mod=cart"
+RewriteRule "thanh-toan.html" "?mod=checkout"

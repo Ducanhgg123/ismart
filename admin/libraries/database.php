@@ -52,15 +52,22 @@ function db_num_rows($query_string) {
 
 function db_insert($table, $data) {
     global $conn;
-    $fields = "(" . implode(", ", array_keys($data)) . ")";
+    $fields = "(`" . implode("`,`", array_keys($data)) . "`)";
     $values = "";
     foreach ($data as $field => $value) {
         if ($value === NULL)
             $values .= "NULL, ";
-        else
+        else if (!is_numeric($value))
             $values .= "'" . escape_string($value) . "', ";
+        else
+            $values .= "" . escape_string($value) . ", ";
     }
     $values = substr($values, 0, -2);
+//     echo "
+//     INSERT INTO $table $fields
+//     VALUES($values)
+// ";
+//     die();
     db_query("
             INSERT INTO $table $fields
             VALUES($values)
@@ -73,10 +80,12 @@ function db_update($table, $data, $where) {
     $sql = "";
     foreach ($data as $field => $value) {
         if ($value === NULL)
-            $sql .= "$field=NULL, ";
-        else
-            $sql .= "$field='" . escape_string($value) . "', ";
+            $sql .= "`$field`=NULL, ";
+        else if (!is_numeric($value))
+            $sql .= "`$field`='" . escape_string($value) . "', ";
+        else $sql .= "`$field`=" . escape_string($value) . ", ";
     }
+   
     $sql = substr($sql, 0, -2);
     db_query("
             UPDATE $table

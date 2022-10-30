@@ -8,7 +8,7 @@
                     <div class="clearfix">
                         <h3 id="index" class="fl-left">Danh sách danh mục</h3>
                         <a href="?mod=post&controller=category&action=add" title="" id="add-new" class="fl-left">Thêm mới</a>
-                        <button title="" id="add-new" class="fl-left" style="cursor:pointer; border:none">Xóa các danh mục</button>
+                        <button title="" id="add-new" class="fl-left" style="cursor:pointer; border:none">Xóa</button>
                     </div>
                 </div>
                 <div class="section" id="detail-page">

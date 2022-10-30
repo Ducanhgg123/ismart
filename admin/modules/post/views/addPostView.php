@@ -11,7 +11,7 @@
             </div>
             <div class="section" id="detail-page">
                 <div class="section-detail">
-                    <?php show_value('success')?>
+                    <?php echo $success?>
                     <form method="POST" enctype="multipart/form-data">
                         <label for="title">Tiêu đề</label>
                         <input type="text" name="title" id="title" value="<?php show_value('title')?>">
@@ -19,6 +19,8 @@
                         <label for="title">Slug ( Friendly_url )</label>
                         <input type="text" name="slug" id="slug" value="<?php show_value('slug')?>">
                         <?php print_error('slug')?>
+                        <label for="title">Mô tả ngắn</label>
+                        <input type="text" name="short_desc" id="short_desc" value="<?php show_value('short_desc')?>">
                         <label for="desc">Mô tả</label>
                         <textarea name="desc" id="desc" class="ckeditor"value="<?php show_value('desc')?>"><?php show_value('content')?></textarea>
                         <label>Hình ảnh</label>
@@ -35,6 +37,7 @@
                                 <option value="<?php echo $cat['id']?>"><?php echo print_char('-',$cat['level']*2).' '.$cat['title']?></option>
                             <?php } ?>
                         </select>
+                        
                         <?php print_error('category')?>
                         <button type="submit" name="btn_add" id="btn-submit">Thêm mới</button>
                         

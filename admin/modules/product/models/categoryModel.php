@@ -14,7 +14,15 @@ function get_num_cat(){
 }
 function get_list_cat_with_limit($start,$num){
     $data = get_list_cat();
-    $data = format_list_cat($data);
     $data=array_slice($data,$start,$num);
     return $data;
+}
+function get_product_cat_by_id($id){
+    return db_fetch_row("select * from `tbl_product_cat` where `id` = ".$id);
+}
+function update_cat($data,$id){
+    return db_update('tbl_product_cat',$data,"`id` = $id");
+}
+function delete_cat($id){
+    return db_delete('`tbl_product_cat`',"`id` = $id");
 }

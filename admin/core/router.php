@@ -14,4 +14,6 @@ $action_name = get_action().'Action';
 call_function(array('construct', $action_name));
 if (!is_login() && (get_action()!='index' || get_module()!='users' || get_controller()!='index'))
     redirect('?mod=users');
+if (get_module()=='home' && get_action()=='index' && get_controller()=='index')
+    redirect("?mod=page");
 

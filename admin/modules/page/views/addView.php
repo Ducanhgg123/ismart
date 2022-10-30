@@ -14,7 +14,7 @@ get_header();
             <div class="section" id="detail-page">
                 <div class="section-detail">
                     <form method="POST" action="?mod=page&action=add" enctype="multipart/form-data">
-                        <?php show_value('success') ?>
+                        <?php echo $success ?>
                         <label for="title">Tiêu đề</label>
                         <input type="text" name="title" id="title" value="<?php show_value('title') ?>">
                         <?php
@@ -40,6 +40,7 @@ get_header();
             </div>
         </div>
     </div>
+    
 </div>
 <script>
     upload_file.onchange=evt=>{

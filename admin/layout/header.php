@@ -23,7 +23,7 @@
             <div id="container">
                 <div id="header-wp">
                     <div class="wp-inner clearfix">
-                        <a href="?page=list_post" title="" id="logo" class="fl-left">ADMIN</a>
+                        <a href="?mod=page" title="" id="logo" class="fl-left">ADMIN</a>
                         <ul id="main-menu" class="fl-left">
                             <li>
                                 <a href="?mod=page" title="">Trang</a>
@@ -37,30 +37,30 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="?page=list_post" title="">Bài viết</a>
+                                <a href="?mod=post" title="">Bài viết</a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="?page=add_post" title="">Thêm mới</a> 
+                                        <a href="?mod=page&action=add" title="">Thêm mới</a> 
                                     </li>
                                     <li>
-                                        <a href="?page=list_post" title="">Danh sách bài viết</a> 
+                                        <a href="?mod=post" title="">Danh sách bài viết</a> 
                                     </li>
                                     <li>
-                                        <a href="?page=list_cat" title="">Danh mục bài viết</a> 
+                                        <a href="?mod=post&category=category" title="">Danh mục bài viết</a> 
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="?page=list_product" title="">Sản phẩm</a>
+                                <a href="?mod=product" title="">Sản phẩm</a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="?page=add_product" title="">Thêm mới</a> 
+                                        <a href="?mod=product&action=add" title="">Thêm mới</a> 
                                     </li>
                                     <li>
-                                        <a href="?page=list_product" title="">Danh sách sản phẩm</a> 
+                                        <a href="?mod=product" title="">Danh sách sản phẩm</a> 
                                     </li>
                                     <li>
-                                        <a href="?page=list_cat" title="">Danh mục sản phẩm</a> 
+                                        <a href="?mod=product&controller=category" title="">Danh mục sản phẩm</a> 
                                     </li>
                                 </ul>
                             </li>
@@ -68,15 +68,31 @@
                                 <a href="" title="">Bán hàng</a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="?page=list_order" title="">Danh sách đơn hàng</a> 
+                                        <a href="?mod=sales" title="">Danh sách đơn hàng</a> 
                                     </li>
                                     <li>
-                                        <a href="?page=list_order" title="">Danh sách khách hàng</a> 
+                                        <a href="?mod=sales&controller=customer" title="">Danh sách khách hàng</a> 
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="?page=menu" title="">Menu</a>
+                                <a href="?mod=slider" title="">Slider</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="?mod=slider&action=add" title="">Thêm mới</a> 
+                                    </li>
+                                    <li>
+                                        <a href="?mod=slider" title="">Danh sách slider</a> 
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="?mod=media" title="">Media</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="?mod=media" title="">Danh sách media</a> 
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                         <div id="dropdown-user" class="dropdown dropdown-extended fl-right">

@@ -17,9 +17,6 @@
                             <li class="publish"><a href="?mod=post&status=1">Đã đăng (<span class="count"><span id="approved"><?php echo get_num_post_by_status(1) ?></span>)</span></a> |</li>
                             <li class="pending"><a href="?mod=post&status=0">Chờ xét duyệt (<span class="count"><span id="not-approved"><?php echo get_num_post_by_status(0) ?></span></span>)</a></li>
                         </ul>
-                        <form method="GET" class="form-s fl-right">
-
-                        </form>
                     </div>
                     <form method="POST" action="?mod=post&action=multi" class="form-actions">
                         <div class="actions">
@@ -56,7 +53,7 @@
                                             <td><span class="tbody-text"><?php echo ++$count ?></h3></span>
                                             <td class="clearfix">
                                                 <div class="tb-title fl-left">
-                                                    <a href="" title=""><?php echo $post['title'] ?></a>
+                                                    <a href="<?php echo $config['base_url']?>?mod=blog&action=detail&id=<?php echo $post['id']?>" title=""><?php echo $post['title'] ?></a>
                                                 </div>
                                                 <ul class="list-operation fl-right">
                                                     <li><a href="?mod=post&action=update&id=<?php echo $id ?>" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
@@ -94,18 +91,18 @@
                         <ul id="list-paging" class="fl-right">
                             <?php if ($total_page > 2) { ?>
                                 <li>
-                                    <a href="?mod=post&page=<?php echo 1 ?>" class="pagination">
+                                    <a href="?mod=post&page=<?php echo 1 ?><?php if (isset($_GET['key'])) echo "&key=".$_GET['key']?><?php if (isset($_GET['status'])) echo "&status=".$_GET['status']?><?php if (isset($_GET['status'])) echo "&status=".$_GET['status']?>" class="pagination">
                                         < </a>
                                 </li>
                             <?php } ?>
                             <?php for ($i = 1; $i <= $total_page; $i++) { ?>
                                 <li>
-                                    <a href="?mod=post&page=<?php echo $i ?>" class="pagination"><?php echo $i ?></a>
+                                    <a href="?mod=post&page=<?php echo $i ?><?php if (isset($_GET['key'])) echo "&key=".$_GET['key']?><?php if (isset($_GET['status'])) echo "&status=".$_GET['status']?><?php if (isset($_GET['status'])) echo "&status=".$_GET['status']?>" class="pagination"><?php echo $i ?></a>
                                 </li>
                             <?php } ?>
                             <?php if ($total_page > 2) { ?>
                                 <li>
-                                    <a href="?mod=post&page=<?php echo $total_page ?>" class="pagination">></a>
+                                    <a href="?mod=post&page=<?php echo $total_page ?><?php if (isset($_GET['key'])) echo "&key=".$_GET['key']?><?php if (isset($_GET['status'])) echo "&status=".$_GET['status']?><?php if (isset($_GET['status'])) echo "&status=".$_GET['status']?>" class="pagination">></a>
                                 </li>
                             <?php } ?>
                         </ul>

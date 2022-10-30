@@ -30,7 +30,7 @@
     }
     // Show the previous value in form
     function show_value($field){
-        global $$field;
+        // global $$field;
         if (!empty($$field))
             echo $$field;
     }
